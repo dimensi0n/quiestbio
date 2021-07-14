@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="/logo.png" className="App-logo" alt="Logo de qui est bio" />
+        <img src="/logo.svg" className="App-logo" alt="Logo de qui est bio" />
         <p className="label">Données fournies par <a className="link" href="https://www.agencebio.org/">l'Agence Bio</a></p>
       </header>
       <section className="form">
