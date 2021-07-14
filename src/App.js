@@ -8,7 +8,6 @@ function App() {
   const [results, setResults] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
-
   useEffect(() => {
     const typing = setTimeout(async () => {
       if (city.length > 4) {
