@@ -1,7 +1,7 @@
 import { Card } from "./Card"
 
-export function Results({ actors }) {
+export function Results({ actors, token }) {
   return <div>
-    { actors.map(actor => <Card key={actor.id} actor={actor} />)}
+    { actors.map(actor => <Card key={actor.id} token={token} actor={actor} />)}
   </div>
 }
