@@ -1,19 +1,14 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
 import './Card.css'
 
-export function Card({ actor, token }) {
+export function Card({ actor, codes }) {
   const [profession, setProfession] = useState(null)
 
   useEffect(() => {
     (async () => {
-      if (actor.naf && token) {
-        const res = await axios.get(`https://api.insee.fr/metadonnees/V1/codes/nafr2/sousClasse/${actor.naf}`, {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        })
-        setProfession(res.data.intitule)
+      if (actor.naf) {
+        const code = actor.naf.length === 6 ? actor.naf  : `${actor.naf.slice(0,2)}.${actor.naf.slice(2)}`
+        codes.forEach(c => c.code === code && setProfession(c.label))
       }
     })()
   })
